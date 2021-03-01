@@ -1,0 +1,42 @@
+[
+    {
+        "bookSourceUrl": "https://zjtsg0527.dps.qikan.com",
+        "bookSourceType": "0",
+        "bookSourceName": "龙源期刊",
+        "bookSourceGroup": "杂志",
+        "bookSourceComment": "",
+        "loginUrl": "",
+        "bookUrlPattern": "",
+        "header": "{\n    'referer': 'https://zjtsg0527.dps.qikan.com/Template/WeChatLibrary4/index.html',\n    'cookie': 'apptoken=5SF5by2/C/IuSpZFIxSi6ZtROrzhK6DvvOI9UpUeeJ4vizmtVo+UDbopDOw6Gf5OXO/CkGQgtVe1VThOJvCeDg==; ticket=wU9Ovv9iQ7Ix07x3E_DjvI-nqoph59O3rggL3TmrJGgKmce40Tve5xx6xMQbDfEQ7sOA0vA_2J-6US73a_nY3Q=='\n}",
+        "searchUrl": "",
+        "exploreUrl": "科幻世界::/api/magazine/Issues?id=04453217-aa95-410c-90d3-3a73079ee68a&year={{2022-page}}\n科学fans::/api/magazine/Issues?id=ad96037a-dad4-41b2-afa5-a506135372f6&year={{2022-page}}\n第一财经::/api/magazine/Issues?id=be43497a-fccc-49c3-8e79-5a58e8632cb4&year={{2022-page}}\n商界::/api/magazine/Issues?id=d93bf9d9-9f31-4fb3-be8d-62dfddbd1233&year={{2022-page}}\n商界评论::/api/magazine/Issues?id=3c73ca05-bba8-4e4a-b699-781da91f9f76&year={{2022-page}}\n电脑爱好者::/api/magazine/Issues?id=7045d2f9-a27d-4601-9df3-d63c143048ad&year={{2022-page}}\n南风窗::/api/magazine/Issues?id=2ab3ecb3-1f0e-4a06-af1f-f08670f42b80&year={{2022-page}}\n科学大观园::/api/magazine/Issues?id=1cf8dd1c-a72d-44e4-9370-a19eecfa3564&year={{2022-page}}\n南方人物周刊::/api/magazine/Issues?id=e29202e8-f6a9-4001-93cc-a6d383b505c7&year={{2022-page}}\n环球人物::/api/magazine/Issues?id=322145c8-6f78-49b6-b72e-9a128a3a50e3&year={{2022-page}}",
+        "enabled": false,
+        "enabledExplore": true,
+        "weight": 0,
+        "customOrder": 0,
+        "lastUpdateTime": 1613814394550,
+        "ruleSearch": {},
+        "ruleExplore": {
+            "bookList": "$.Data",
+            "name": "{$.Name}{$.Year}年第{$.Issue}期",
+            "author": "{$.Name}编辑部",
+            "coverUrl": "$.CoverImages[1]",
+            "bookUrl": "/api/magazine/article/catalog?&magazineguid={{$.ID}}&year={{$.Year}}&issue={{$.Issue}}"
+        },
+        "ruleBookInfo": {
+            "name": "{$.Data.Name}第{$.Data.Issue}期",
+            "author": "{$.Data.Name}编辑部",
+            "coverUrl": "$.Data.CoverImages[1]"
+        },
+        "ruleToc": {
+            "chapterList": "$..Articles.[*]",
+            "chapterName": "$.Title",
+            "chapterUrl": "/api/magazine/article/GetFullDetail?&articleid={{$.ArticleID}}",
+            "updateTime": "$.Summary"
+        },
+        "ruleContent": {
+            "content": "$.Data.Content",
+            "imageStyle": "FULL"
+        }
+    }
+]
