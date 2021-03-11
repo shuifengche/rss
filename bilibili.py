@@ -90,7 +90,7 @@ def videos2rss(videos):
         lastBuildDate=datetime.datetime.utcnow(),
         items=items
     )
-    rss.write_xml(open('/Users/pxy/Desktop/rss/bilibili.xml', 'w'), encoding='utf-8')
+    rss.write_xml(open('bilibili.xml', 'w'), encoding='utf-8')
 
 # upName = ["李好帅", "马督工", "山高县", "没啥用科技", "暴走大事件", "半佛仙人", "暴躁的仙人"]
 # for name in upName:
@@ -125,7 +125,3 @@ if __name__ == '__main__':
                 videos += [video]
         list += videos
     videos2rss(list)
-    print("任务完成")
-    os.system('cd /Users/pxy/Desktop/rss && git add . && git commit -m "Update" > /Users/pxy/Documents/pic.txt && git push > /Users/pxy/Documents/pic.txt')
-    with open('/Users/pxy/Desktop/data/bili.txt', 'a') as f:
-        f.write(str(time.asctime(time.localtime(time.time()))) + ' 执行了脚本\n')
