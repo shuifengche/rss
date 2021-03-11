@@ -1,0 +1,29 @@
+
+name: 'shuifengche'
+
+on:
+  push:
+  schedule:
+    - cron: '0/30 * * * *'
+
+jobs:
+  stale:
+      runs-on: ubuntu-18.04
+      steps:
+      - uses: actions/checkout@v2 # Checking out the repo
+      - name: Install dependecies
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: install -d # Install all dependencies, including development ones
+      - name: Build
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: run build
+      - name: Commit and push if changed
+        run: |
+          git diff
+          git config --global user.email "shuifengche@foxmail.com"
+          git config --global user.name "shuifengche"
+          git add .
+          git commit -m "Github Action Auto Updated"
+          git push
